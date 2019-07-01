@@ -26,6 +26,16 @@
     "vue-server-renderer": "^2.6.0",
     "webpack": "^4.0.0"
   },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.0.1",
+    "koa-webpack-dev-middleware": "^2.0.2",
+    "memory-fs": "^0.4.1",
+    "portfinder": "^1.0.20",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2",
+    "webpackbar": "^3.2.0"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
