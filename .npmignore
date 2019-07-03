@@ -7,3 +7,4 @@ node_modules
 .gitignore
 commitlint.config.js
 yarn.lock
+README.md
