@@ -6,7 +6,7 @@ replace:
 ---
 
 <%# REPLACE %>
-export default (context) => new Vuex.Store
+export default () => new Vuex.Store
 <%# END_REPLACE %>
 
 <%# REPLACE %>

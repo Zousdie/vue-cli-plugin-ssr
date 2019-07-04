@@ -46,7 +46,11 @@ module.exports = (api) => {
 
   api.onCreateComplete(() => {
     if (api.hasPlugin('eslint')) {
-      require('@vue/cli-plugin-eslint/lint')({ silent: true }, api);
+      try {
+        require('@vue/cli-plugin-eslint/lint')({ silent: true }, api);
+      } catch (err) {
+        //
+      }
     }
 
     delFile(api, './src/router.js');
