@@ -1,5 +1,4 @@
 import createApp from './main';
-import './assets/style/app.css';
 
 const { app, router, store } = createApp();
 

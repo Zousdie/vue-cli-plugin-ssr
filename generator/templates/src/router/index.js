@@ -14,8 +14,8 @@ export default (context) => {
         name: 'home',
         meta: {
           title: 'HOME',
-          description: 'Just Home',
-          keywords: 'ssr home'
+          description: 'Home',
+          keywords: 'ssr,home'
         },
         component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
       },
@@ -24,8 +24,8 @@ export default (context) => {
         name: 'about',
         meta: {
           title: 'ABOUT',
-          description: 'Just About',
-          keywords: 'ssr about'
+          description: 'About',
+          keywords: 'ssr,about'
         },
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
       },

@@ -1,21 +1,14 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import book from './modules/book';
+---
+extend: '@vue/cli-service/generator/vuex/template/src/store.js'
+replace:
+  - !!js/regexp /export default new Vuex\.Store/
+  - !!js/regexp /state[^]*?\},/
+---
 
-Vue.use(Vuex);
+<%# REPLACE %>
+export default (context) => new Vuex.store
+<%# END_REPLACE %>
 
-export default () => new Vuex.Store({
-  modules: {
-    book,
-  },
-
-  state() { },
-
-  mutations: {
-
-  },
-
-  actions: {
-
-  },
-});
+<%# REPLACE %>
+state() { },
+<%# END_REPLACE %>
