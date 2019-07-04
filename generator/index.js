@@ -1,19 +1,36 @@
 const fs = require('fs-extra');
+const path = require('path');
 const chalk = require('chalk');
 
-function delFile(api, path) {
-  const filePath = api.resolve(path);
+function delFile(api, p) {
+  const filePath = api.resolve(p);
   if (fs.existsSync(filePath)) {
-    api.exitLog(chalk.red(`SSR plugin will delete file "${path}"`), 'warn');
+    api.exitLog(chalk.red(`SSR plugin will delete file "${p}"`), 'warn');
     fs.removeSync(filePath);
   }
 }
 
-function moveFile(api, path, tarPath) {
-  const filePath = api.resolve(path);
+function moveFile(api, ph, tarPath) {
+  const filePath = api.resolve(ph);
   const tarFilePath = api.resolve(tarPath);
+
+  const mkdir = (p) => {
+    const base = path.dirname(p);
+
+    if (!fs.existsSync(base)) {
+      mkdir(base);
+    } else {
+      fs.mkdir(p);
+    }
+  };
+
   if (fs.existsSync(filePath)) {
-    api.exitLog(chalk.red(`SSR plugin will move file "${path}" to "${tarPath}"`), 'warn');
+    const tarDirname = path.dirname(tarFilePath);
+    if (!fs.existsSync(tarDirname)) {
+      mkdir(tarDirname);
+    }
+
+    api.exitLog(chalk.red(`SSR plugin will move file "${ph}" to "${tarPath}"`), 'warn');
     fs.renameSync(filePath, tarFilePath);
   }
 }
