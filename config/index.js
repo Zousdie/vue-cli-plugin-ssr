@@ -7,4 +7,5 @@ module.exports = {
   entryServer: path.resolve(base, './src/entry-server.js'),
   entryDevApp: path.resolve(base, './server/app.dev'),
   nodeExternalsWhitelist: [/\.css$/, /\?vue&type=style/],
+  chainWebpackCallback: null,
 };
