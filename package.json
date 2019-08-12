@@ -31,10 +31,11 @@
     "fs-extra": "^8.1.0",
     "koa-webpack-dev-middleware": "^2.0.2",
     "memory-fs": "^0.4.1",
+    "null-loader": "^3.0.0",
     "portfinder": "^1.0.21",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^1.7.2",
-    "webpackbar": "^3.2.0"
+    "webpackbar": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
